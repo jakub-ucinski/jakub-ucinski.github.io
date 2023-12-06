@@ -29,6 +29,7 @@ function removeLineBreaks(inputText) {
 }
 
 const onEditButtonClickHandler = () => {
+  onKeyHandler();
   document.getElementById("inputText").classList.toggle("hidden");
   document.getElementById("editText").classList.toggle("hidden");
 };
