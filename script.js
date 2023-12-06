@@ -2,7 +2,8 @@ function onKeyHandler() {
   const inputText = document.getElementById("inputText").value;
   const temp0 = removeNumbers(inputText);
   const temp1 = removeLineBreaks(temp0);
-  document.getElementById("outputText").innerText = temp1;
+  console.log(temp1);
+  document.getElementById("editText").value = temp1;
 }
 
 function removeNumbers(inputText) {
@@ -27,15 +28,18 @@ function removeLineBreaks(inputText) {
     .join(" ");
 }
 
+const onEditButtonClickHandler = () => {
+  document.getElementById("inputText").classList.toggle("hidden");
+  document.getElementById("editText").classList.toggle("hidden");
+};
+
 const copyHandler = () => {
-  const inputTextField = document.getElementById("inputText");
+  const editTextField = document.getElementById("editText");
 
   // Select the text field
-  inputTextField.select();
-  inputTextField.setSelectionRange(0, 99999); // For mobile devices
+  editTextField.select();
+  editTextField.setSelectionRange(0, 99999); // For mobile devices
 
-  const temp0 = removeNumbers(inputTextField.value);
-  const temp1 = removeLineBreaks(temp0);
   // Copy the text inside the text field
-  navigator.clipboard.writeText(temp1);
+  navigator.clipboard.writeText(editTextField.value);
 };

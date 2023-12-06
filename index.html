@@ -10,9 +10,29 @@
   <body>
     <div id="outer">
       <div>
-        <textarea placeholder="Input Extract" id="inputText"></textarea>
+        <textarea
+          placeholder="Input Extract"
+          id="inputText"
+          class="text"
+          onkeydown="onKeyHandler()"
+          onkeyup="onKeyHandler()"
+        ></textarea>
+        <textarea
+          placeholder="Input Extract"
+          class="text hidden"
+          id="editText"
+        ></textarea>
       </div>
-      <button id="copyButton" onclick="copyHandler()">Copy</button>
+      <div id="buttons">
+        <button
+          class="button"
+          id="editButton"
+          onclick="onEditButtonClickHandler()"
+        >
+          Toggle Edit
+        </button>
+        <button class="button" onclick="copyHandler()">Copy</button>
+      </div>
     </div>
 
     <!-- <div id="outputText"></div> -->

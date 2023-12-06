@@ -151,7 +151,7 @@ body {
   box-sizing: border-box;
 }
 
-#inputText {
+.text {
   width: 30em;
   max-width: -webkit-fill-available;
   background-color: #f9f9f9;
@@ -160,11 +160,22 @@ body {
   padding: 10px;
 }
 
-#copyButton {
+.hidden {
+  display: none;
+}
+
+.button {
   padding: 1em 1.3em;
   background-color: black;
   color: white;
   border: none;
+  width: 50%;
+}
+
+#editButton {
+  border: 1px solid black;
+  background: white;
+  color: black;
 }
 
 #outer {
@@ -192,3 +203,8 @@ body {
   display: flex;
   overflow-y: scroll;
 } */
+
+#buttons {
+  display: flex;
+  gap: 1em;
+}
